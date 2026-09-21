@@ -1,0 +1,58 @@
+{
+  "name": "RegionVisit",
+  "type": "object",
+  "properties": {
+    "wojewodztwo": {
+      "type": "string"
+    },
+    "powiat": {
+      "type": "string"
+    },
+    "gmina": {
+      "type": "string"
+    },
+    "dzielnica": {
+      "type": "string"
+    },
+    "visit_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "done",
+        "planned"
+      ],
+      "default": "done"
+    },
+    "cycle": {
+      "type": "string",
+      "enum": [
+        "none",
+        "weekly",
+        "monthly",
+        "quarterly"
+      ],
+      "default": "none"
+    }
+  },
+  "required": [
+    "wojewodztwo",
+    "visit_date"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "create": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

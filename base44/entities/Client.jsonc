@@ -1,0 +1,40 @@
+{
+  "name": "Client",
+  "type": "object",
+  "properties": {
+    "company_name": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "nip": {
+      "type": "string"
+    },
+    "discount_percent": {
+      "type": "number",
+      "default": 0
+    },
+    "total_debt": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "company_name"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "create": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

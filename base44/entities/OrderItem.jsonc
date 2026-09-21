@@ -1,0 +1,54 @@
+{
+  "name": "OrderItem",
+  "type": "object",
+  "properties": {
+    "order_id": {
+      "type": "string"
+    },
+    "product_id": {
+      "type": "string"
+    },
+    "product_name": {
+      "type": "string"
+    },
+    "quantity": {
+      "type": "number",
+      "default": 1
+    },
+    "unit_sale_price": {
+      "type": "number",
+      "default": 0
+    },
+    "unit_purchase_cost": {
+      "type": "number",
+      "default": 0
+    },
+    "applied_reserved": {
+      "type": "number",
+      "default": 0
+    },
+    "applied_physical": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "order_id",
+    "product_id",
+    "quantity"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "create": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

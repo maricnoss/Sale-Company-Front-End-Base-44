@@ -1,0 +1,107 @@
+{
+  "name": "Order",
+  "type": "object",
+  "properties": {
+    "client_id": {
+      "type": "string"
+    },
+    "client_name": {
+      "type": "string"
+    },
+    "location_id": {
+      "type": "string"
+    },
+    "location_name": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "planned",
+        "executed"
+      ],
+      "default": "planned"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "delivered",
+        "cancelled"
+      ],
+      "default": "pending"
+    },
+    "payment_status": {
+      "type": "string",
+      "enum": [
+        "paid",
+        "unpaid"
+      ],
+      "default": "unpaid"
+    },
+    "delivery_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "delivered_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "total_net": {
+      "type": "number",
+      "default": 0
+    },
+    "total_vat": {
+      "type": "number",
+      "default": 0
+    },
+    "total_revenue": {
+      "type": "number",
+      "default": 0
+    },
+    "total_profit": {
+      "type": "number",
+      "default": 0
+    },
+    "applied_debt": {
+      "type": "number",
+      "default": 0
+    },
+    "notes": {
+      "type": "string"
+    },
+    "is_d2d": {
+      "type": "boolean",
+      "default": false
+    },
+    "d2d_woj": {
+      "type": "string"
+    },
+    "d2d_powiat": {
+      "type": "string"
+    },
+    "d2d_gmina": {
+      "type": "string"
+    },
+    "d2d_dzielnica": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "client_id"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "create": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

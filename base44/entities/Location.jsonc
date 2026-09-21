@@ -1,0 +1,48 @@
+{
+  "name": "Location",
+  "type": "object",
+  "properties": {
+    "client_id": {
+      "type": "string"
+    },
+    "point_name": {
+      "type": "string"
+    },
+    "full_address": {
+      "type": "string"
+    },
+    "lat": {
+      "type": "number"
+    },
+    "lng": {
+      "type": "number"
+    },
+    "wojewodztwo": {
+      "type": "string"
+    },
+    "gmina": {
+      "type": "string"
+    },
+    "dzielnica": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "client_id",
+    "point_name"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "create": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

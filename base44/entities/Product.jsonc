@@ -1,0 +1,49 @@
+{
+  "name": "Product",
+  "type": "object",
+  "properties": {
+    "sku": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "purchase_cost": {
+      "type": "number",
+      "default": 0
+    },
+    "sale_price": {
+      "type": "number",
+      "default": 0
+    },
+    "physical_stock": {
+      "type": "number",
+      "default": 0
+    },
+    "reserved_stock": {
+      "type": "number",
+      "default": 0
+    },
+    "last_delivery_date": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "name"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "create": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

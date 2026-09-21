@@ -1,0 +1,58 @@
+{
+  "name": "RegionMarketData",
+  "type": "object",
+  "properties": {
+    "region_key": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "wojewodztwo",
+        "powiat",
+        "gmina",
+        "dzielnica"
+      ]
+    },
+    "name": {
+      "type": "string"
+    },
+    "wojewodztwo": {
+      "type": "string"
+    },
+    "powiat": {
+      "type": "string"
+    },
+    "gmina": {
+      "type": "string"
+    },
+    "population": {
+      "type": "number"
+    },
+    "population_year": {
+      "type": "string"
+    },
+    "data_json": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "region_key",
+    "kind",
+    "name"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "create": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}
